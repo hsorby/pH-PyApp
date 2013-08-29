@@ -1,7 +1,13 @@
 pH-PyApp
 ========
 Educational app for demonstrating human pH homeostasis
-By Randall Britten, Auckland Bioengineering Institute, University of Auckland
+
+Code by Randall Britten, Auckland Bioengineering Institute, University of Auckland
+
+Other team members:
+* Peter Hunter, Auckland Bioengineering Institute, University of Auckland
+* Bernard de Bono
+
 August 2013
 
 Development environment setup
