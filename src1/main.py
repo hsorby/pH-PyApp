@@ -26,22 +26,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.main_frame = Ui_MainWindow()
         self.main_frame.setupUi(self)
 
-        # self.button = QPushButton('Run')
     def plot_stuff(self):
 
- #       x = np.arange(1024)
         (voi, states, algebraic) = solve_model()
 
         self.main_frame.widget.axes.plot(voi, np.vstack((states,algebraic)).T)
         self.main_frame.widget.draw()
-        
-#        fig = plot_model(voi, states, algebraic)
-    
-        # generate the canvas to display the plot
-#        canvas = FigureCanvas(fig)
-
-
-
 
 
 if __name__ == '__main__':
