@@ -3,6 +3,8 @@
 from math import *
 from numpy import *
 
+
+    
 sizeAlgebraic = 1
 sizeStates = 3
 sizeConstants = 5
@@ -57,14 +59,14 @@ def computeAlgebraic(constants, states, voi):
     algebraic[0] = constants[0]*states[0]-constants[1]*states[1]*states[2]
     return algebraic
 
-def solve_model():
+def solve_model(init_states, constants, voi):
     """Solve model with ODE solver"""
     from scipy.integrate import ode
     # Initialise constants and state variables
-    (init_states, constants) = initConsts()
+    # (init_states, constants) = initConsts()
 
     # Set timespan to solve over
-    voi = linspace(0, 10, 500)
+    #voi = linspace(0, 10, 500)
 
     # Construct ODE object to solve
     r = ode(computeRates)
