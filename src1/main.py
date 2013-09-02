@@ -30,9 +30,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def plot_stuff(self):
 
-        (voi, states, algebraic) = self.mathModelState.solve()
+        self.mathModelState.solve()
 
-        self.main_frame.widget.axes.plot(voi, np.vstack((states,algebraic)).T)
+        self.main_frame.widget.axes.plot(self.mathModelState.voiHistory, np.vstack((self.mathModelState.statesHistory,self.mathModelState.algebraicsHistory)).T)
         self.main_frame.widget.draw()
 
 

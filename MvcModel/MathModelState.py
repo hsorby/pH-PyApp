@@ -17,12 +17,12 @@ class MathModelState(object):
     
     self.voiStart = 0
     self.voiRange = 10
-    self.voiStepCount = 3500
+    self.voiStepCount = 500
     (self.init_states, self.constants) = phcontrol.initConsts()
 
-    self.algebraicsHistory = []
-    self.statesHistory = []
-    self.voiHistoric = []
+    self.algebraicsHistory = atleast_2d([])
+    self.statesHistory = atleast_2d([])
+    self.voiHistory = []
 
 
   def solve(self):
@@ -34,11 +34,9 @@ class MathModelState(object):
     (voi, states1, algebraics1) = phcontrol.solve_model(self.init_states, self.constants, voi)
 
     self.voiStart = voi[len(voi)-1]
-    self.init_states = states1[len(states1)-1] # Check whether states1 needs to be transposed.
+    self.init_states = states1[:,len(states1)-1]
 
-    #self.statesHistory = self.statesHistory + states1
-    #self.algebraicsHistory = self.algebraicsHistory + algebraics1
-    #self.voiHistoric = self.voiHistoric + voi
-
-    return (voi, states1, algebraics1)
+    self.statesHistory = append(self.statesHistory, states1, axis=0)
+    self.algebraicsHistory = append(self.algebraicsHistory, algebraics1, axis=0)
+    self.voiHistory = append(self.voiHistory, voi, axis=0)
 
