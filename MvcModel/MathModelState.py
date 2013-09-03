@@ -8,6 +8,7 @@ class MathModelState(object):
   
   def __init__(self):
     self.reset()
+#     self.simCount = 0
 
 
   def reset(self):
@@ -16,12 +17,12 @@ class MathModelState(object):
     """
     
     self.voiStart = 0
-    self.voiRange = 10
-    self.voiStepCount = 500
+    self.voiRange = 10 # todo: This needs to be able to be set from UI, but depends on whether UI has "real time" simulation.
+    self.voiStepCount = 500 # todo: This should be set from UI, say under "settings".
     (self.init_states, self.constants) = phcontrol.initConsts()
 
-    self.algebraicsHistory = atleast_2d([])
-    self.statesHistory = atleast_2d([])
+    self.algebraicsHistory = []
+    self.statesHistory = []
     self.voiHistory = []
 
 
@@ -34,9 +35,23 @@ class MathModelState(object):
     (voi, states1, algebraics1) = phcontrol.solve_model(self.init_states, self.constants, voi)
 
     self.voiStart = voi[len(voi)-1]
-    self.init_states = states1[:,len(states1)-1]
 
-    self.statesHistory = append(self.statesHistory, states1, axis=0)
-    self.algebraicsHistory = append(self.algebraicsHistory, algebraics1, axis=0)
-    self.voiHistory = append(self.voiHistory, voi, axis=0)
+#     self.simCount += 1
+#     
+#     savetxt("voi--" + `self.simCount` + ".csv", voi, delimiter=",")
+#     savetxt("states--" + `self.simCount` + ".csv", states1, delimiter=",")
+#     savetxt("algebraic--" + `self.simCount` + ".csv", algebraics1, delimiter=",")
+
+
+    if (len(self.voiHistory) < 1) :
+      self.statesHistory = states1
+      self.algebraicsHistory = algebraics1
+      self.voiHistory = voi
+    else:
+      self.statesHistory = hstack((self.statesHistory, states1))
+      self.algebraicsHistory = hstack((self.algebraicsHistory, algebraics1))
+      self.voiHistory = hstack((self.voiHistory, voi))
+
+    historyCount = len(self.voiHistory)
+    self.init_states = self.statesHistory[:,historyCount-1]
 
