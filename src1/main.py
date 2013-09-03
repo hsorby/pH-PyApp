@@ -28,18 +28,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.mathModelState = MathModelState()
         
-#         self.simCount = 0
 
     def plot_stuff(self):
 
         self.mathModelState.solve()
-
-#         self.simCount += 1
-#         
-#         np.savetxt("voi" + `self.simCount` + ".csv", self.mathModelState.voiHistory, delimiter=",")
-#         np.savetxt("states" + `self.simCount` + ".csv", self.mathModelState.statesHistory, delimiter=",")
-#         np.savetxt("algebraic" + `self.simCount` + ".csv", self.mathModelState.algebraicsHistory, delimiter=",")
-
 
         self.main_frame.widget.axes.plot(self.mathModelState.voiHistory, np.vstack((self.mathModelState.statesHistory,self.mathModelState.algebraicsHistory)).T)
         self.main_frame.widget.draw()

@@ -8,7 +8,6 @@ class MathModelState(object):
   
   def __init__(self):
     self.reset()
-#     self.simCount = 0
 
 
   def reset(self):
@@ -35,13 +34,6 @@ class MathModelState(object):
     (voi, states1, algebraics1) = phcontrol.solve_model(self.init_states, self.constants, voi)
 
     self.voiStart = voi[len(voi)-1]
-
-#     self.simCount += 1
-#     
-#     savetxt("voi--" + `self.simCount` + ".csv", voi, delimiter=",")
-#     savetxt("states--" + `self.simCount` + ".csv", states1, delimiter=",")
-#     savetxt("algebraic--" + `self.simCount` + ".csv", algebraics1, delimiter=",")
-
 
     if (len(self.voiHistory) < 1) :
       self.statesHistory = states1
