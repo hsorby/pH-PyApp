@@ -29,8 +29,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.mathModelState = MathModelState()
         
 
-    def plot_stuff(self):
-
+    def simulateButtonPushed(self):
+        
         self.mathModelState.solve()
 
         self.main_frame.widget.axes.plot(self.mathModelState.voiHistory, np.vstack((self.mathModelState.statesHistory,self.mathModelState.algebraicsHistory)).T)
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     frame = MainWindow()
 
-    frame.main_frame.pushButton.clicked.connect(frame.plot_stuff)
+    frame.main_frame.pushButton.clicked.connect(frame.simulateButtonPushed)
 
     frame.show()
     app.exec_()
