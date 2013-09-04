@@ -6,7 +6,7 @@ import PySide
 from PySide import QtCore
 from PySide.QtGui import QApplication, QMainWindow, QTextEdit, QPushButton, QMessageBox, QWidget, QVBoxLayout
 
-import MvcModel.MathModelState
+import MvcModel.MathModelController
 
 from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
 
@@ -14,7 +14,7 @@ from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
 __version__ = '0.0.1'
 
 from testUi01 import Ui_MainWindow # testUi01 is generated from testUi01.ui using pyside-uic. Qt Designer was used to create the .ui file.  The matplot widget had to be "Promoted" in Qt Designer.
-from MvcModel.MathModelState import MathModelState
+from MvcModel.MathModelController import MathModelController
 
 class MainWindow(QMainWindow, Ui_MainWindow):
 
@@ -26,14 +26,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.main_frame = Ui_MainWindow()
         self.main_frame.setupUi(self)
 
-        self.mathModelState = MathModelState()
+        self.mathModelController = MathModelController()
         
 
     def simulateButtonPushed(self):
         
-        self.mathModelState.solve()
+        self.mathModelController.solve()
 
-        self.main_frame.widget.axes.plot(self.mathModelState.voiHistory, np.vstack((self.mathModelState.statesHistory,self.mathModelState.algebraicsHistory)).T)
+        self.main_frame.widget.axes.plot(self.mathModelController.voiHistory, np.vstack((self.mathModelController.statesHistory,self.mathModelController.algebraicsHistory)).T)
         self.main_frame.widget.draw()
 
 

@@ -1,7 +1,7 @@
 import phcontrol
 from numpy import *
 
-class MathModelState(object):
+class MathModelController(object):
   """
   Keeps overall state for pH model, which allows a series of solves, each picking up where the previous left off.
   """
