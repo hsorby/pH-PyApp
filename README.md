@@ -43,5 +43,5 @@ Todo
 * Units for plot axes
 * Show other variables on plot, especially parameters that are under user control
 * Consider using a separate thread for solve.
-
+* Internationalisation, rather than hard-coded message and lable strings.
 
