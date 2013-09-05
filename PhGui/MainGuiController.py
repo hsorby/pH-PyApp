@@ -20,6 +20,10 @@ class MainGuiController(object):
     def simulateButtonPushed(self):
       self.mathModelController.solve()
       self.mainWindowFrame.plot1(self.mathModelController.voiHistory, self.mathModelController.statesHistory, self.mathModelController.algebraicsHistory)
+
+      
+    def resetButtonPushed(self):
+      self.mathModelController.reset()
        
 
     def co2SinkValueChanged(self, value):
