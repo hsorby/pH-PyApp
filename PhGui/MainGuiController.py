@@ -5,6 +5,10 @@ co2SinkSliderScaleFactor = 0.0002
 co2SourceSliderScaleFactor = 0.0002
 protonSourceSliderScaleFactor = 0.0002
 
+co2SinkResetValue = 0 
+co2SourceResetValue = 0 
+protonSourceResetValue = 0
+
 
 class MainGuiController(object):
     '''
@@ -24,6 +28,7 @@ class MainGuiController(object):
       
     def resetButtonPushed(self):
       self.mathModelController.reset()
+      self.mainWindowFrame.reset(co2SinkResetValue, co2SourceResetValue, protonSourceResetValue)
        
 
     def co2SinkValueChanged(self, value):

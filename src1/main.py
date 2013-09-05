@@ -29,6 +29,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def plot1(self, voiHistory, statesHistory, algebraicsHistory):
         self.main_frame.plotArea.axes.plot(voiHistory, np.vstack((statesHistory,algebraicsHistory)).T)
         self.main_frame.plotArea.draw()
+        
+    def reset(self, co2SinkValue, co2SourceValue, protonSourceValue):
+      self.main_frame.plotArea.axes.clear()
+      self.main_frame.plotArea.draw()
+      
+      self.main_frame.co2Sink.setValue(co2SinkValue)
+      self.main_frame.co2Source.setValue(co2SourceValue)
+      self.main_frame.protonSource.setValue(protonSourceValue)
 
 
 if __name__ == '__main__':
