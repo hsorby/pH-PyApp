@@ -30,10 +30,13 @@ Notes
 
 Todo
 ====
-* Actually create something useful in the UI.
+* Actually create something useful in the UI.  Some progress here: CO2 sink value can be interactively adjusted. User still needs to click simulate each time.
 * Current code is just a copy-n-paste-n-hack shambles to check that all the pieces will work together, and because a lot of the tools are being learned, it design at the code level.
+  Some progress here: small clean ups being done at each commit.
 * Automated tests
 * Figure out how to create Installer and then create scripts to make Installer
+* Disable sliders that adjust model parameters during a solve.  This does not mean that it can't be made "real-time interactive", to do that, solves will just be done in short bursts.
+* Display parameter values, currently one has to guess their values from the slider positions.
 
 
 
