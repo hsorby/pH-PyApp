@@ -30,13 +30,18 @@ Notes
 
 Todo
 ====
-* Actually create something useful in the UI.  Some progress here: CO2 sink value can be interactively adjusted. User still needs to click simulate each time.
-* Current code is just a copy-n-paste-n-hack shambles to check that all the pieces will work together, and because a lot of the tools are being learned, it design at the code level.
+* Continuous simulation interactive "real-time" mode, where adjusting sliders updates parameters as simulation runs.
+* Current code is still a bit of a copy-n-paste-n-hack shambles to check that all the pieces will work together, and because a lot of the tools were being learned, it still needs design at the code level.
   Some progress here: small clean ups being done at each commit.
 * Automated tests
 * Figure out how to create Installer and then create scripts to make Installer
 * Disable sliders that adjust model parameters during a solve.  This does not mean that it can't be made "real-time interactive", to do that, solves will just be done in short bursts.
 * Display parameter values, currently one has to guess their values from the slider positions.
-
+* Display Legend for plots
+* Allow user to select colour and line style
+* Pan and zoom plot
+* Units for plot axes
+* Show other variables on plot, especially parameters that are under user control
+* Consider using a separate thread for solve.
 
 
