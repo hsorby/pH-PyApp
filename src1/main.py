@@ -25,12 +25,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.valueChanged = QtCore.Signal(int)
 
-        
-    def simulateButtonPushed(self):
-        self.mainGuiController.simulateButtonPushed();
-
-    def co2sinkValueChanged(self, value):
-      self.mainGuiController.co2sinkValueChanged(value)
 
     def plot1(self, voiHistory, statesHistory, algebraicsHistory):
         self.main_frame.widget.axes.plot(voiHistory, np.vstack((statesHistory,algebraicsHistory)).T)
@@ -41,11 +35,11 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     frame = MainWindow()
-    frame.main_frame.pushButton.clicked.connect(frame.simulateButtonPushed)
 
     frame.mainGuiController = MainGuiController(frame)
-    
-    frame.main_frame.co2sink.valueChanged.connect(frame.co2sinkValueChanged)
+
+    frame.main_frame.pushButton.clicked.connect(frame.mainGuiController.simulateButtonPushed)
+    frame.main_frame.co2sink.valueChanged.connect(frame.mainGuiController.co2sinkValueChanged)
     
 
     frame.show()
