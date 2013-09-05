@@ -27,8 +27,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
     def plot1(self, voiHistory, statesHistory, algebraicsHistory):
-        self.main_frame.widget.axes.plot(voiHistory, np.vstack((statesHistory,algebraicsHistory)).T)
-        self.main_frame.widget.draw()
+        self.main_frame.plotArea.axes.plot(voiHistory, np.vstack((statesHistory,algebraicsHistory)).T)
+        self.main_frame.plotArea.draw()
 
 
 if __name__ == '__main__':
@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     frame.mainGuiController = MainGuiController(frame)
 
-    frame.main_frame.pushButton.clicked.connect(frame.mainGuiController.simulateButtonPushed)
+    frame.main_frame.simulateButton.clicked.connect(frame.mainGuiController.simulateButtonPushed)
     frame.main_frame.co2Source.valueChanged.connect(frame.mainGuiController.co2SourceValueChanged)
     frame.main_frame.co2Sink.valueChanged.connect(frame.mainGuiController.co2SinkValueChanged)
     frame.main_frame.protonSource.valueChanged.connect(frame.mainGuiController.protonSourceValueChanged)
