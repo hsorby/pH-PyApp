@@ -8,6 +8,8 @@ class MathModelController(object):
   
   def __init__(self):
     self.reset()
+    (legend_states, legend_algebraic, legend_voi, legend_constants) = phcontrol.createLegends()
+    self.co2sinkIndex = legend_constants.index("CO2sink in component Flux (mM_per_second)")
 
 
   def reset(self):
@@ -46,4 +48,8 @@ class MathModelController(object):
 
     historyCount = len(self.voiHistory)
     self.init_states = self.statesHistory[:,historyCount-1]
+    
+  def setCo2sinkValue(self, value):
+    self.co2sinkValue = value
+    self.constants[self.co2sinkIndex] = value
 

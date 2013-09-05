@@ -16,4 +16,7 @@ class MainGuiController(object):
       self.mathModelController.solve()
       self.mainWindowFrame.plot1(self.mathModelController.voiHistory, self.mathModelController.statesHistory, self.mathModelController.algebraicsHistory)
        
-      
+
+    def co2sinkValueChanged(self, value):
+      co2sinkSliderScaleFactor = 0.01
+      self.mathModelController.setCo2sinkValue(value * co2sinkSliderScaleFactor)
