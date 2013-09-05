@@ -19,7 +19,7 @@
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>351</width>
+      <width>241</width>
       <height>481</height>
      </rect>
     </property>
@@ -152,6 +152,32 @@
       </rect>
      </property>
     </widget>
+    <widget class="QPushButton" name="protonLevelPurge">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>330</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>H+ purge</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="protonPurgeAmount">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>330</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0.1</string>
+     </property>
+    </widget>
     <zorder>co2Sink</zorder>
     <zorder>co2SourceLabel</zorder>
     <zorder>protonSource</zorder>
@@ -170,11 +196,13 @@
     <zorder>co2SinkValue</zorder>
     <zorder>protonSourceLabel</zorder>
     <zorder>co2SourceValue</zorder>
+    <zorder>protonLevelPurge</zorder>
+    <zorder>protonPurgeAmount</zorder>
    </widget>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>290</x>
       <y>20</y>
       <width>361</width>
       <height>481</height>

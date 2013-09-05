@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'testUi01.ui'
 #
-# Created: Thu Sep 05 17:40:02 2013
+# Created: Thu Sep 05 19:12:53 2013
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -16,7 +16,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.groupBox = QtGui.QGroupBox(self.centralwidget)
-        self.groupBox.setGeometry(QtCore.QRect(20, 20, 351, 481))
+        self.groupBox.setGeometry(QtCore.QRect(20, 20, 241, 481))
         self.groupBox.setObjectName("groupBox")
         self.co2Sink = QtGui.QSlider(self.groupBox)
         self.co2Sink.setGeometry(QtCore.QRect(110, 30, 20, 221))
@@ -54,8 +54,14 @@ class Ui_MainWindow(object):
         self.co2SourceValue.setEnabled(False)
         self.co2SourceValue.setGeometry(QtCore.QRect(10, 291, 51, 20))
         self.co2SourceValue.setObjectName("co2SourceValue")
+        self.protonLevelPurge = QtGui.QPushButton(self.groupBox)
+        self.protonLevelPurge.setGeometry(QtCore.QRect(10, 330, 75, 23))
+        self.protonLevelPurge.setObjectName("protonLevelPurge")
+        self.protonPurgeAmount = QtGui.QLineEdit(self.groupBox)
+        self.protonPurgeAmount.setGeometry(QtCore.QRect(90, 330, 113, 20))
+        self.protonPurgeAmount.setObjectName("protonPurgeAmount")
         self.groupBox_2 = QtGui.QGroupBox(self.centralwidget)
-        self.groupBox_2.setGeometry(QtCore.QRect(380, 20, 361, 481))
+        self.groupBox_2.setGeometry(QtCore.QRect(290, 20, 361, 481))
         self.groupBox_2.setObjectName("groupBox_2")
         self.logText = QtGui.QPlainTextEdit(self.groupBox_2)
         self.logText.setEnabled(False)
@@ -91,6 +97,8 @@ class Ui_MainWindow(object):
         self.co2SourceLabel.setText(QtGui.QApplication.translate("MainWindow", "CO2 source", None, QtGui.QApplication.UnicodeUTF8))
         self.co2SinkLabel.setText(QtGui.QApplication.translate("MainWindow", "CO2 sink", None, QtGui.QApplication.UnicodeUTF8))
         self.protonSourceLabel.setText(QtGui.QApplication.translate("MainWindow", "H+ source", None, QtGui.QApplication.UnicodeUTF8))
+        self.protonLevelPurge.setText(QtGui.QApplication.translate("MainWindow", "H+ purge", None, QtGui.QApplication.UnicodeUTF8))
+        self.protonPurgeAmount.setText(QtGui.QApplication.translate("MainWindow", "0.1", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox_2.setTitle(QtGui.QApplication.translate("MainWindow", "Results", None, QtGui.QApplication.UnicodeUTF8))
         self.resetButton.setText(QtGui.QApplication.translate("MainWindow", "Reset", None, QtGui.QApplication.UnicodeUTF8))
         self.simulateButton.setText(QtGui.QApplication.translate("MainWindow", "Simulate", None, QtGui.QApplication.UnicodeUTF8))
