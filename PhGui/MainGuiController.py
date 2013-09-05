@@ -1,9 +1,9 @@
 from MvcModel.MathModelController import MathModelController
 
 
-co2SinkSliderScaleFactor = 0.001
-co2SourceSliderScaleFactor = 0.001
-protonSourceSliderScaleFactor = 0.001
+co2SinkSliderScaleFactor = 0.0002
+co2SourceSliderScaleFactor = 0.0002
+protonSourceSliderScaleFactor = 0.0002
 
 
 class MainGuiController(object):
