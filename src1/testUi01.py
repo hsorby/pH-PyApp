@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'testUi01.ui'
 #
-# Created: Mon Sep 02 18:32:44 2013
+# Created: Thu Sep 05 16:30:19 2013
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,11 +23,11 @@ class Ui_MainWindow(object):
         self.co2Source.setOrientation(QtCore.Qt.Vertical)
         self.co2Source.setTickPosition(QtGui.QSlider.TicksBelow)
         self.co2Source.setObjectName("co2Source")
-        self.co2sink = QtGui.QSlider(self.centralwidget)
-        self.co2sink.setGeometry(QtCore.QRect(130, 29, 20, 221))
-        self.co2sink.setOrientation(QtCore.Qt.Vertical)
-        self.co2sink.setTickPosition(QtGui.QSlider.TicksBelow)
-        self.co2sink.setObjectName("co2sink")
+        self.co2Sink = QtGui.QSlider(self.centralwidget)
+        self.co2Sink.setGeometry(QtCore.QRect(130, 29, 20, 221))
+        self.co2Sink.setOrientation(QtCore.Qt.Vertical)
+        self.co2Sink.setTickPosition(QtGui.QSlider.TicksBelow)
+        self.co2Sink.setObjectName("co2Sink")
         self.widget = MatplotlibWidget(self.centralwidget)
         self.widget.setGeometry(QtCore.QRect(310, 30, 291, 231))
         self.widget.setObjectName("widget")

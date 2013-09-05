@@ -39,7 +39,9 @@ if __name__ == '__main__':
     frame.mainGuiController = MainGuiController(frame)
 
     frame.main_frame.pushButton.clicked.connect(frame.mainGuiController.simulateButtonPushed)
-    frame.main_frame.co2sink.valueChanged.connect(frame.mainGuiController.co2sinkValueChanged)
+    frame.main_frame.co2Source.valueChanged.connect(frame.mainGuiController.co2SourceValueChanged)
+    frame.main_frame.co2Sink.valueChanged.connect(frame.mainGuiController.co2SinkValueChanged)
+    frame.main_frame.protonSource.valueChanged.connect(frame.mainGuiController.protonSourceValueChanged)
     
 
     frame.show()

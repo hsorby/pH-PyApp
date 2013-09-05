@@ -43,7 +43,7 @@
      <enum>QSlider::TicksBelow</enum>
     </property>
    </widget>
-   <widget class="QSlider" name="co2sink">
+   <widget class="QSlider" name="co2Sink">
     <property name="geometry">
      <rect>
       <x>130</x>
