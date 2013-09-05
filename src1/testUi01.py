@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'testUi01.ui'
 #
-# Created: Thu Sep 05 17:31:19 2013
+# Created: Thu Sep 05 17:40:02 2013
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -80,6 +80,9 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
+        QtCore.QObject.connect(self.co2Source, QtCore.SIGNAL("valueChanged(int)"), self.co2SourceValue.update)
+        QtCore.QObject.connect(self.co2Sink, QtCore.SIGNAL("valueChanged(int)"), self.co2SinkValue.update)
+        QtCore.QObject.connect(self.protonSource, QtCore.SIGNAL("valueChanged(int)"), self.protonSourceValue.update)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):

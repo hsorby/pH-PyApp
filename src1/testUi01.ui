@@ -255,5 +255,54 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>co2Source</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>co2SourceValue</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>59</x>
+     <y>181</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>55</x>
+     <y>341</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>co2Sink</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>co2SinkValue</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>29</x>
+     <y>151</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>135</x>
+     <y>341</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>protonSource</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>protonSourceValue</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>219</x>
+     <y>181</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>215</x>
+     <y>341</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
