@@ -24,9 +24,9 @@ class MathModelController(object):
     self.voiStepCount = 500 # todo: This should be set from UI, say under "settings".
     (self.init_states, self.constants) = phcontrol.initConsts()
 
-    self.algebraicsHistory = []
-    self.statesHistory = []
-    self.voiHistory = []
+    self.algebraicsHistory = array([])
+    self.statesHistory = array([])
+    self.voiHistory = array([])
 
 
   def solve(self):
