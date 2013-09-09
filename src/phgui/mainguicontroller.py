@@ -1,4 +1,4 @@
-from MvcModel.MathModelController import MathModelController
+from mvcmodel.mathmodelcontroller import MathModelController
 
 
 co2SinkSliderScaleFactor = 0.0002

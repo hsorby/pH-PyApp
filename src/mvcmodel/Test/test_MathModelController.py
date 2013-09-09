@@ -1,9 +1,9 @@
 import unittest
-import MvcModel.MathModelController
+import mvcmodel.mathmodelcontroller
 
 class Test_MathModelController(unittest.TestCase):
   def test_reset(self):
-    m = MvcModel.MathModelController.MathModelController()
+    m = mvcmodel.mathmodelcontroller.MathModelController()
     
     self.assertEqual(m.statesHistory.size, 0, "Pristine MathModelController should have blank history: states")
     self.assertEqual(m.algebraicsHistory.size, 0, "Pristine MathModelController should have blank history: algebraics")

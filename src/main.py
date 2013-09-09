@@ -9,9 +9,9 @@ from PySide.QtGui import QApplication, QMainWindow, QTextEdit, QPushButton, QMes
 
 __version__ = '0.0.1'
 
-from testUi01 import Ui_MainWindow # testUi01 is generated from testUi01.ui using pyside-uic. Qt Designer was used to create the .ui file.  The matplot widget had to be "Promoted" in Qt Designer.
-from MvcModel.MathModelController import MathModelController
-from PhGui.MainGuiController import MainGuiController
+from mainui import Ui_MainWindow # testUi01 is generated from testUi01.ui using pyside-uic. Qt Designer was used to create the .ui file.  The matplot widget had to be "Promoted" in Qt Designer.
+from mvcmodel.mathmodelcontroller import MathModelController
+from phgui.mainguicontroller import MainGuiController
 
 class MainWindow(QMainWindow, Ui_MainWindow):
 
