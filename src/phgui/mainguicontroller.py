@@ -19,11 +19,12 @@ class MainGuiController(object):
     def __init__(self, mainWindowFrame):
       self.mathModelController = MathModelController()
       self.mainWindowFrame = mainWindowFrame
+      self.running = False
 
       
-    def simulateButtonPushed(self):
-      self.mathModelController.solve()
-      self.mainWindowFrame.plot1(self.mathModelController.voiHistory, self.mathModelController.statesHistory, self.mathModelController.algebraicsHistory)
+    def playPauseButtonPushed(self):
+      self.running = not self.running
+      self.mainWindowFrame.playPauseLabelToggle(self.running)
 
       
     def resetButtonPushed(self):
@@ -41,3 +42,10 @@ class MainGuiController(object):
 
     def protonSourceValueChanged(self, value):
       self.mathModelController.setProtonSourceValue(value * protonSourceSliderScaleFactor)
+
+      
+    def timerEvent(self):
+      if (self.running):
+        self.mathModelController.solve()
+        self.mainWindowFrame.plot1(self.mathModelController.voiHistory, self.mathModelController.statesHistory, self.mathModelController.algebraicsHistory)
+      

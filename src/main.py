@@ -9,12 +9,14 @@ from PySide.QtGui import QApplication, QMainWindow, QTextEdit, QPushButton, QMes
 
 __version__ = '0.0.1'
 
-from mainui import Ui_MainWindow # testUi01 is generated from testUi01.ui using pyside-uic. Qt Designer was used to create the .ui file.  The matplot widget had to be "Promoted" in Qt Designer.
+from mainui import Ui_MainWindow # mainui is generated from mainui.ui using pyside-uic. Qt Designer was used to create the .ui file.  The matplot widget had to be "Promoted" in Qt Designer.
 from mvcmodel.mathmodelcontroller import MathModelController
 from phgui.mainguicontroller import MainGuiController
 
-class MainWindow(QMainWindow, Ui_MainWindow):
+speed=300
 
+
+class MainWindow(QMainWindow, Ui_MainWindow):
 
     def __init__(self, parent=None):
 
@@ -22,8 +24,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.main_frame = Ui_MainWindow()
         self.main_frame.setupUi(self)
-
+        
         self.valueChanged = QtCore.Signal(int)
+
+        timer = QtCore.QTimer(self)
+        self.connect(timer, QtCore.SIGNAL("timeout()"), self.update)
+        timer.start(speed)
+
+  
+    def update(self):
+          self.mainGuiController.timerEvent()
 
 
     def plot1(self, voiHistory, statesHistory, algebraicsHistory):
@@ -37,7 +47,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       self.main_frame.co2Sink.setValue(co2SinkValue)
       self.main_frame.co2Source.setValue(co2SourceValue)
       self.main_frame.protonSource.setValue(protonSourceValue)
-
+      
+    def playPauseLabelToggle(self, running):
+      if (running):
+        text = "Pause"
+      else:
+        text = "Run"
+      self.main_frame.simulateButton.setText(text)
+        
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
@@ -46,7 +63,7 @@ if __name__ == '__main__':
 
     frame.mainGuiController = MainGuiController(frame)
 
-    frame.main_frame.simulateButton.clicked.connect(frame.mainGuiController.simulateButtonPushed)
+    frame.main_frame.simulateButton.clicked.connect(frame.mainGuiController.playPauseButtonPushed)
     frame.main_frame.resetButton.clicked.connect(frame.mainGuiController.resetButtonPushed)
 
     frame.main_frame.co2Source.valueChanged.connect(frame.mainGuiController.co2SourceValueChanged)
