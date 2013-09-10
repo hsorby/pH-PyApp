@@ -34,14 +34,17 @@ class MainGuiController(object):
 
     def co2SinkValueChanged(self, value):
       self.mathModelController.setCo2SinkValue(value * co2SinkSliderScaleFactor)
+      self.mainWindowFrame.setCo2SinkValue(value * co2SinkSliderScaleFactor)
 
 
     def co2SourceValueChanged(self, value):
       self.mathModelController.setCo2SourceValue(value * co2SourceSliderScaleFactor)
+      self.mainWindowFrame.setCo2SourceValue(value * co2SourceSliderScaleFactor)
        
 
     def protonSourceValueChanged(self, value):
       self.mathModelController.setProtonSourceValue(value * protonSourceSliderScaleFactor)
+      self.mainWindowFrame.setProtonSourceValue(value * protonSourceSliderScaleFactor)
 
       
     def timerEvent(self):

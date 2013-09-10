@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mainui.ui'
 #
-# Created: Mon Sep 09 16:00:24 2013
+# Created: Tue Sep 10 16:08:56 2013
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -86,9 +86,6 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        QtCore.QObject.connect(self.co2Source, QtCore.SIGNAL("valueChanged(int)"), self.co2SourceValue.update)
-        QtCore.QObject.connect(self.co2Sink, QtCore.SIGNAL("valueChanged(int)"), self.co2SinkValue.update)
-        QtCore.QObject.connect(self.protonSource, QtCore.SIGNAL("valueChanged(int)"), self.protonSourceValue.update)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -96,7 +93,10 @@ class Ui_MainWindow(object):
         self.groupBox.setTitle(QtGui.QApplication.translate("MainWindow", "Adjustments", None, QtGui.QApplication.UnicodeUTF8))
         self.co2SourceLabel.setText(QtGui.QApplication.translate("MainWindow", "CO2 source", None, QtGui.QApplication.UnicodeUTF8))
         self.co2SinkLabel.setText(QtGui.QApplication.translate("MainWindow", "CO2 sink", None, QtGui.QApplication.UnicodeUTF8))
+        self.protonSourceValue.setText(QtGui.QApplication.translate("MainWindow", "0.0", None, QtGui.QApplication.UnicodeUTF8))
+        self.co2SinkValue.setText(QtGui.QApplication.translate("MainWindow", "0.0", None, QtGui.QApplication.UnicodeUTF8))
         self.protonSourceLabel.setText(QtGui.QApplication.translate("MainWindow", "H+ source", None, QtGui.QApplication.UnicodeUTF8))
+        self.co2SourceValue.setText(QtGui.QApplication.translate("MainWindow", "0.0", None, QtGui.QApplication.UnicodeUTF8))
         self.protonLevelPurge.setText(QtGui.QApplication.translate("MainWindow", "H+ purge", None, QtGui.QApplication.UnicodeUTF8))
         self.protonPurgeAmount.setText(QtGui.QApplication.translate("MainWindow", "0.1", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox_2.setTitle(QtGui.QApplication.translate("MainWindow", "Results", None, QtGui.QApplication.UnicodeUTF8))

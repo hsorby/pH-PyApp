@@ -13,7 +13,7 @@ from mainui import Ui_MainWindow # mainui is generated from mainui.ui using pysi
 from mvcmodel.mathmodelcontroller import MathModelController
 from phgui.mainguicontroller import MainGuiController
 
-speed=300
+speed=300 # todo: this needs to be able to be adjusted from UI.
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -47,6 +47,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       self.main_frame.co2Sink.setValue(co2SinkValue)
       self.main_frame.co2Source.setValue(co2SourceValue)
       self.main_frame.protonSource.setValue(protonSourceValue)
+      
+    def setCo2SourceValue(self, value):
+      self.main_frame.co2SourceValue.setText(str(value))
+      
+    def setCo2SinkValue(self, value):
+      self.main_frame.co2SinkValue.setText(str(value))
+      
+    def setProtonSourceValue(self, value):
+      self.main_frame.protonSourceValue.setText(str(value))
       
     def playPauseLabelToggle(self, running):
       if (running):
