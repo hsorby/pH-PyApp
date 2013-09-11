@@ -112,6 +112,9 @@
        <height>20</height>
       </rect>
      </property>
+     <property name="text">
+      <string>0.0</string>
+     </property>
     </widget>
     <widget class="QLineEdit" name="co2SinkValue">
      <property name="enabled">
@@ -124,6 +127,9 @@
        <width>51</width>
        <height>20</height>
       </rect>
+     </property>
+     <property name="text">
+      <string>0.0</string>
      </property>
     </widget>
     <widget class="QLabel" name="protonSourceLabel">
@@ -150,6 +156,9 @@
        <width>51</width>
        <height>20</height>
       </rect>
+     </property>
+     <property name="text">
+      <string>0.0</string>
      </property>
     </widget>
     <widget class="QPushButton" name="protonLevelPurge">
@@ -178,26 +187,6 @@
       <string>0.1</string>
      </property>
     </widget>
-    <zorder>co2Sink</zorder>
-    <zorder>co2SourceLabel</zorder>
-    <zorder>protonSource</zorder>
-    <zorder>co2SinkLabel</zorder>
-    <zorder>co2Source</zorder>
-    <zorder>protonSourceLabel</zorder>
-    <zorder>co2SinkValue</zorder>
-    <zorder>protonSourceValue</zorder>
-    <zorder>co2SourceValue</zorder>
-    <zorder>co2Sink</zorder>
-    <zorder>co2SourceLabel</zorder>
-    <zorder>protonSource</zorder>
-    <zorder>co2SinkLabel</zorder>
-    <zorder>co2Source</zorder>
-    <zorder>protonSourceValue</zorder>
-    <zorder>co2SinkValue</zorder>
-    <zorder>protonSourceLabel</zorder>
-    <zorder>co2SourceValue</zorder>
-    <zorder>protonLevelPurge</zorder>
-    <zorder>protonPurgeAmount</zorder>
    </widget>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
@@ -283,54 +272,5 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections>
-  <connection>
-   <sender>co2Source</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>co2SourceValue</receiver>
-   <slot>update()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>59</x>
-     <y>181</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>55</x>
-     <y>341</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>co2Sink</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>co2SinkValue</receiver>
-   <slot>update()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>29</x>
-     <y>151</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>135</x>
-     <y>341</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>protonSource</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>protonSourceValue</receiver>
-   <slot>update()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>219</x>
-     <y>181</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>215</x>
-     <y>341</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

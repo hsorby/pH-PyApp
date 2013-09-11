@@ -20,8 +20,8 @@ class MathModelController(object):
     """
     
     self.voiStart = 0
-    self.voiRange = 10 # todo: This needs to be able to be set from UI, but depends on whether UI has "real time" simulation.
-    self.voiStepCount = 500 # todo: This should be set from UI, say under "settings".
+    self.voiRange = 0.6 # todo: This needs to be able to be set from UI, but depends on whether UI has "real time" simulation.
+    self.voiStepCount = 40 # todo: This should be set from UI, say under "settings".
     (self.init_states, self.constants) = phcontrol.initConsts()
 
     self.algebraicsHistory = array([])
