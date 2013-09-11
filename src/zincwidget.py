@@ -3,7 +3,6 @@ from PySide import QtCore, QtOpenGL
 
 #import opencmiss
 from opencmiss.zinc.context import Context
-from opencmiss.zinc.glyph import Glyph
 from opencmiss.zinc.field import Field
 from opencmiss.zinc.sceneviewer import SceneViewerInput, SceneViewer
 from opencmiss.zinc.spectrum import SpectrumComponent
@@ -29,7 +28,7 @@ class ZincWidget(QtOpenGL.QGLWidget):
     # initializeGL start
     def initializeGL(self):
         '''
-        Initialise the Zinc scene for drawing the axis glyph at a point.  
+        Initialise the Zinc scene for drawing the lungs.  
         '''
         
         # Get the default region to create a point in.

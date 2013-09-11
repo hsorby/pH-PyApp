@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mainui.ui'
 #
-# Created: Wed Sep 11 15:28:49 2013
+# Created: Wed Sep 11 16:06:45 2013
 #      by: pyside-uic 0.2.14 running on PySide 1.1.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -116,6 +116,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2 = QtGui.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.simulateButton = QtGui.QPushButton(self.groupBox_2)
+        self.simulateButton.setMinimumSize(QtCore.QSize(80, 0))
         self.simulateButton.setObjectName("simulateButton")
         self.horizontalLayout_2.addWidget(self.simulateButton)
         self.resetButton = QtGui.QPushButton(self.groupBox_2)

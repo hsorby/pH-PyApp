@@ -200,6 +200,12 @@
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
             <widget class="QPushButton" name="simulateButton">
+             <property name="minimumSize">
+              <size>
+               <width>80</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="text">
               <string>Simulate</string>
              </property>

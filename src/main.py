@@ -1,16 +1,13 @@
 import sys
-import platform
 
 import numpy as np
-import PySide
 from PySide import QtCore
-from PySide.QtGui import QApplication, QMainWindow, QTextEdit, QPushButton, QMessageBox, QWidget, QVBoxLayout
+from PySide.QtGui import QApplication, QMainWindow
 
 
 __version__ = '0.0.1'
 
 from mainui import Ui_MainWindow # mainui is generated from mainui.ui using pyside-uic. Qt Designer was used to create the .ui file.  The matplot widget had to be "Promoted" in Qt Designer.
-from mvcmodel.mathmodelcontroller import MathModelController
 from phgui.mainguicontroller import MainGuiController
 
 speed=300 # todo: this needs to be able to be adjusted from UI.
@@ -33,7 +30,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   
     def update(self):
-          self.mainGuiController.timerEvent()
+        self.mainGuiController.timerEvent()
 
 
     def plot1(self, voiHistory, statesHistory, algebraicsHistory):
@@ -41,28 +38,28 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.main_frame.plotArea.draw()
         
     def reset(self, co2SinkValue, co2SourceValue, protonSourceValue):
-      self.main_frame.plotArea.axes.clear()
-      self.main_frame.plotArea.draw()
-      
-      self.main_frame.co2Sink.setValue(co2SinkValue)
-      self.main_frame.co2Source.setValue(co2SourceValue)
-      self.main_frame.protonSource.setValue(protonSourceValue)
+        self.main_frame.plotArea.axes.clear()
+        self.main_frame.plotArea.draw()
+        
+        self.main_frame.co2Sink.setValue(co2SinkValue)
+        self.main_frame.co2Source.setValue(co2SourceValue)
+        self.main_frame.protonSource.setValue(protonSourceValue)
       
     def setCo2SourceValue(self, value):
-      self.main_frame.co2SourceValue.setText(str(value))
+        self.main_frame.co2SourceValue.setText(str(value))
       
     def setCo2SinkValue(self, value):
-      self.main_frame.co2SinkValue.setText(str(value))
+        self.main_frame.co2SinkValue.setText(str(value))
       
     def setProtonSourceValue(self, value):
-      self.main_frame.protonSourceValue.setText(str(value))
+        self.main_frame.protonSourceValue.setText(str(value))
       
     def playPauseLabelToggle(self, running):
-      if (running):
-        text = "Pause"
-      else:
-        text = "Run"
-      self.main_frame.simulateButton.setText(text)
+        if (running):
+            text = "Pause"
+        else:
+            text = "Run"
+        self.main_frame.simulateButton.setText(text)
         
 
 if __name__ == '__main__':
