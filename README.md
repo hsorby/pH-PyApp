@@ -44,5 +44,23 @@ Todo
 * Units for plot axes
 * Show other variables on plot, especially parameters that are under user control
 * Consider using a separate thread for solve.
-* Internationalisation, rather than hard-coded message and lable strings.
+* Internationalisation, rather than hard-coded message and label strings.
+* Check licensing terms on binaries that form part of distributable.
 
+Packaging
+==========
+Windows
+-------
+Setup:
+
+* Download py2exe http://sourceforge.net/projects/py2exe/files/py2exe/0.6.9/
+* Install it
+
+Packaging:
+
+* Get the setup.py file from github under resources/win
+* Change into the directory containing ph-PyApp
+* execute the command : python resources\win\setup.py py2exe
+
+The output should be an executable in a directory called 'dist'.
+Assuming you put the setup.py script in a directory called resources/win.
