@@ -1,6 +1,6 @@
 pH-PyApp
 ========
-Educational app for demonstrating human pH homeostasis
+Educational application for demonstrating human pH homeostasis
 
 Code by Randall Britten, Auckland Bioengineering Institute, University of Auckland
 
@@ -12,21 +12,22 @@ August 2013
 
 Development environment setup
 =============================
-* Install Python and SciPy (on Windows, this is bundled for example in the Anaconda installer)
+* Install Python
+* Install SciPy and Numpy (from Christoph Gohlke if on windows http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy, http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy)
 * Install Qt (at time of writing, v4.8.5 is compatible with PySide 1.2.1) 
 * Install PySide
 * Install Eclipse (requires installation of Java JVM)
-* Install Pydev
+* Install Pydev (Installed through eclipses 'Help/Install new software' menu option)
 * Install Git (might already be available via Eclipse, depending on your version of Eclipse)
 
 Notes
 =====
 * Edit .ui files using Qt Designer
-* Use pyside-uic to generate .py from .uic
+* Use pyside-uic to generate .py from .ui
 * Main program is main.py
 * phcontrol.py is mostly just the code generated from the CellML file at http://models.cellml.org/workspace/178
 * To generate code, get the CellML-API (http://cellml-api.sourceforge.net), and run testCeLEDS using python.xml (under CeLEDS languages folder in CellML-API source)
-* Only tested on Windows 7 64 bit platform so far.
+* Tested on Windows 7 64 bit and GNU/Linux 64 bit platforms.  Should also work on OSX.
 
 Todo
 ====

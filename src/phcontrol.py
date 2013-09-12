@@ -1,21 +1,16 @@
 # This is the code generated for the model using the CellML-API, modified slightly for inclusion in the rest of the app.
 # Size of variable arrays:
-from math import *
-from numpy import *
+   
+import numpy as np
 
-
-    
 sizeAlgebraic = 1
 sizeStates = 3
 sizeConstants = 5
-
-
 
 def createLegends():
     legend_states = [""] * sizeStates
     legend_rates = [""] * sizeStates
     legend_algebraic = [""] * sizeAlgebraic
-    legend_voi = ""
     legend_constants = [""] * sizeConstants
     legend_voi = "Time in component Environment (second)"
     legend_states[0] = "CO2 in component Flux (mM)"
@@ -53,9 +48,9 @@ def computeRates(voi, states, constants):
     return(rates)
 
 def computeAlgebraic(constants, states, voi):
-    algebraic = array([[0.0] * len(voi)] * sizeAlgebraic)
-    states = array(states)
-    voi = array(voi)
+    algebraic = np.array([[0.0] * len(voi)] * sizeAlgebraic)
+    states = np.array(states)
+    voi = np.array(voi)
     algebraic[0] = constants[0]*states[0]-constants[1]*states[1]*states[2]
     return algebraic
 
@@ -75,7 +70,7 @@ def solve_model(init_states, constants, voi):
     r.set_f_params(constants)
 
     # Solve model
-    states = array([[0.0] * len(voi)] * sizeStates)
+    states = np.array([[0.0] * len(voi)] * sizeStates)
     states[:,0] = init_states
     for (i,t) in enumerate(voi[1:]):
         if r.successful():
@@ -87,17 +82,3 @@ def solve_model(init_states, constants, voi):
     # Compute algebraic variables
     algebraic = computeAlgebraic(constants, states, voi)
     return (voi, states, algebraic)
-
-def plot_model(voi, states, algebraic):
-    """Plot variables against variable of integration"""
-    import pylab
-    (legend_states, legend_algebraic, legend_voi, legend_constants) = createLegends()
-    pylab.figure(1)
-    pylab.plot(voi,vstack((states,algebraic)).T)
-    pylab.xlabel(legend_voi)
-    pylab.legend(legend_states + legend_algebraic, loc='best')
-    pylab.show()
-
-if __name__ == "__main__":
-    (voi, states, algebraic) = solve_model()
-    plot_model(voi, states, algebraic)
