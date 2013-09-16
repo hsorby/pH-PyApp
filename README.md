@@ -58,9 +58,7 @@ Setup:
 
 Packaging:
 
-* Get the setup.py file from github under resources/win
 * Change into the directory containing ph-PyApp
 * execute the command : python resources\win\setup.py py2exe
 
-The output should be an executable in a directory called 'dist'.
-Assuming you put the setup.py script in a directory called resources/win.
+This command will create a directory called 'dist' and an executable called 'main.exe' will be created inside it.

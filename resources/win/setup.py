@@ -4,7 +4,7 @@ import py2exe
 import matplotlib
 
 APP = [{'script': 'src/main.py'}]
-DATA_FILES = matplotlib.get_py2exe_datafiles()
+DATA_FILES = matplotlib.get_py2exe_datafiles() + ['src/lungs.exregion']
 OPTIONS = {}
 
 setup(
