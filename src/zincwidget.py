@@ -19,7 +19,6 @@ class ZincWidget(QtOpenGL.QGLWidget):
         '''
         
         QtOpenGL.QGLWidget.__init__(self, parent)
-        print(self.sizeHint())
         # Create a Zinc context from which all other objects can be derived either directly or indirectly.
         #print(opencmiss.zinc.__version__)
         self._context = Context("axisviewer")
