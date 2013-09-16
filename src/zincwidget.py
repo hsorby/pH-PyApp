@@ -19,12 +19,19 @@ class ZincWidget(QtOpenGL.QGLWidget):
         '''
         
         QtOpenGL.QGLWidget.__init__(self, parent)
+        print(self.sizeHint())
         # Create a Zinc context from which all other objects can be derived either directly or indirectly.
         #print(opencmiss.zinc.__version__)
         self._context = Context("axisviewer")
         self._scene_viewer = None
         # init end
 
+    def sizeHint(self):
+        '''
+        Let the layout manager know the preferred size of the widget.
+        '''
+        return QtCore.QSize(600, 350)
+    
     # initializeGL start
     def initializeGL(self):
         '''
